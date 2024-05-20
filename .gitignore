@@ -1,5 +1,7 @@
 *.pyc
 __pycache__/
-.DS_Store
+env/
+venv/
 credentials.txt
 linkedin_urls.txt
+LinkedIn_Contacts_Info.csv

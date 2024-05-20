@@ -1,10 +1,20 @@
 # LinkedIn Scraper
 
-This is a LinkedIn scraper application built with Flask and Selenium. It scrapes LinkedIn profiles and extracts relevant information into a CSV file.
+Este proyecto es una aplicación web en Flask que permite ingresar credenciales de LinkedIn y una lista de URLs de perfiles para extraer información y generar un archivo CSV.
 
-## How to Use
+## Instalación
 
-1. Add your LinkedIn credentials to `credentials.txt`.
-2. Add LinkedIn profile URLs to `linkedin_urls.txt`.
-3. Deploy the application to a platform like Render.
-4. Use the `/scrape` endpoint to scrape the LinkedIn profiles.
+1. Clona el repositorio.
+2. Instala las dependencias usando `pip install -r requirements.txt`.
+
+## Uso
+
+1. Inicia la aplicación con `python src/main.py`.
+2. Accede a `http://localhost:5000` en tu navegador.
+3. Ingresa tus credenciales de LinkedIn y las URLs de los perfiles.
+4. Haz clic en "Run Scraper" para generar el archivo CSV.
+
+## Despliegue
+
+Este proyecto está configurado para ser desplegado en [Render](https://render.com/). Asegúrate de tener un archivo `Procfile` y una lista de dependencias en `requirements.txt`.
+
