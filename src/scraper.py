@@ -89,7 +89,8 @@ def run_scraper(username, password, urls):
     options.add_argument('--headless')
     options.add_argument('--no-sandbox')
     options.add_argument('--disable-dev-shm-usage')
-    driver = webdriver.Chrome(executable_path=CHROMEDRIVER_PATH, options=options)
+    service = Service(CHROMEDRIVER_PATH)
+    driver = webdriver.Chrome(service=service, options=options)
 
     stealth(driver,
             languages=["en-US", "en"],
