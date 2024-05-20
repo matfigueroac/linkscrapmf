@@ -1,0 +1,5 @@
+Flask
+Selenium
+pandas
+flask-socketio
+selenium-stealth
