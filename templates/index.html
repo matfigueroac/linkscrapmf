@@ -9,12 +9,12 @@
     <h1>LinkedIn Scraper</h1>
     <form action="/scrape" method="post">
         <label for="username">LinkedIn Username:</label>
-        <input type="text" id="username" name="username"><br><br>
+        <input type="text" id="username" name="username" required><br><br>
         <label for="password">LinkedIn Password:</label>
-        <input type="password" id="password" name="password"><br><br>
-        <label for="urls">LinkedIn URLs (one per line):</label><br>
-        <textarea id="urls" name="urls" rows="10" cols="30"></textarea><br><br>
-        <input type="submit" value="Scrape">
+        <input type="password" id="password" name="password" required><br><br>
+        <label for="urls">LinkedIn Profile URLs (one per line):</label><br>
+        <textarea id="urls" name="urls" rows="10" cols="30" required></textarea><br><br>
+        <button type="submit">Scrape</button>
     </form>
 </body>
 </html>
