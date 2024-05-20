@@ -3,7 +3,7 @@ import os
 import pandas as pd
 from scraper import run_scraper
 
-app = Flask(__name__)
+app = Flask(__name__, template_folder='templates')
 
 @app.route('/')
 def index():
