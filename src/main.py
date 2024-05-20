@@ -1,6 +1,5 @@
 from flask import Flask, request, render_template, send_file
 import os
-import pandas as pd
 from scraper import run_scraper
 
 app = Flask(__name__, template_folder='templates')
