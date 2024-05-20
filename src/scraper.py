@@ -8,6 +8,7 @@ import pandas as pd
 import time
 import random
 
+# Path to your ChromeDriver
 CHROMEDRIVER_PATH = os.getenv('CHROMEDRIVER_PATH', '/usr/local/bin/chromedriver')
 
 def simulate_human_behavior(driver):
