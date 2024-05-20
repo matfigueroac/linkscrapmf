@@ -1,3 +1,4 @@
+import os
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
@@ -8,7 +9,7 @@ import time
 import random
 
 # Path to your ChromeDriver
-CHROMEDRIVER_PATH = '/usr/local/bin/chromedriver'  # Actualiza esto a la ruta correcta en Render
+CHROMEDRIVER_PATH = os.getenv('CHROMEDRIVER_PATH', '/usr/local/bin/chromedriver')
 
 def simulate_human_behavior(driver):
     for _ in range(random.randint(5, 10)):
