@@ -1,1 +1,1 @@
-web: ./install_chromedriver.sh && gunicorn -b 0.0.0.0:5000 src.main:app
+web: ./install_chromedriver.sh && gunicorn -b 0.0.0.0:10000 src.main:app
