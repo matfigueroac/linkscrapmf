@@ -1,8 +1,9 @@
-from flask import Flask, request, render_template, send_file
+from flask import Flask, render_template, request, send_file
 import os
+import pandas as pd
 from scraper import run_scraper
 
-app = Flask(__name__, template_folder='src/templates')
+app = Flask(__name__, template_folder='templates')
 
 @app.route('/')
 def index():

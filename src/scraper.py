@@ -123,4 +123,4 @@ def run_scraper(username, password, urls):
     driver.quit()
 
     df = pd.DataFrame(data, columns=['Full Name', 'First Name', 'Last Name', 'Job Title', 'Company Name', 'School Name', 'Location', 'URL', 'About', 'Headline'])
-    df.to_csv('LinkedIn_Contacts_Info.csv', index=False, encoding='utf-8-sig')
+    df.to_csv('LinkedIn_Contacts_render.csv', index=False, encoding='utf-8-sig')
