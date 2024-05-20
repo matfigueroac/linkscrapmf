@@ -3,3 +3,4 @@ Selenium
 pandas
 flask-socketio
 selenium-stealth
+gunicorn

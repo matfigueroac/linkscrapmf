@@ -1,4 +1,4 @@
-from flask import Flask, request, send_file
+from flask import Flask, request, render_template, send_file
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
@@ -12,7 +12,7 @@ import os
 app = Flask(__name__)
 
 # Path to your ChromeDriver
-CHROMEDRIVER_PATH = '/usr/local/bin/chromedriver'
+CHROMEDRIVER_PATH = '/usr/local/bin/chromedriver'  # Update this to the actual path
 
 def simulate_human_behavior(driver):
     for _ in range(random.randint(5, 10)):
@@ -46,7 +46,7 @@ def get_profile_info(url, driver):
         else:
             first_name = last_name = 'not available'
 
-        job_title = company_name = school_name = about = image_url = 'not available'
+        job_title = company_name = school_name = about = 'not available'
 
         try:
             job_title_element = driver.find_element(By.CSS_SELECTOR, "SECTION[data-view-name='profile-card']:nth-of-type(7) > DIV:last-of-type > UL:first-of-type > LI:first-of-type > DIV[data-view-name='profile-component-entity']:first-of-type > DIV:last-of-type > DIV:first-of-type > DIV:first-of-type > DIV:first-of-type > DIV:first-of-type > DIV:first-of-type > DIV:first-of-type > SPAN:first-of-type")
@@ -97,21 +97,25 @@ def get_profile_info(url, driver):
 
 @app.route('/')
 def index():
-    return "LinkedIn Scraper is Running"
+    return render_template('index.html')
 
 @app.route('/scrape', methods=['POST'])
 def scrape():
     linkedin_username = request.form['username']
     linkedin_password = request.form['password']
     urls = request.form['urls'].splitlines()
+    file = request.files['file']
 
-    service = Service(CHROMEDRIVER_PATH)
+    if file:
+        urls += file.read().decode('utf-8').splitlines()
+
     options = webdriver.ChromeOptions()
     options.add_argument('--headless')
     options.add_argument('--no-sandbox')
     options.add_argument('--disable-dev-shm-usage')
-    driver = webdriver.Chrome(service=service, options=options)
+    driver = webdriver.Chrome(executable_path=CHROMEDRIVER_PATH, options=options)
 
+    # Use selenium-stealth to evade bot detection
     stealth(driver,
             languages=["en-US", "en"],
             vendor="Google Inc.",

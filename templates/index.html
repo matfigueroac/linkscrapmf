@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LinkedIn Scraper</title>
+</head>
+<body>
+    <h1>LinkedIn Scraper</h1>
+    <form action="/scrape" method="post" enctype="multipart/form-data">
+        <label for="username">LinkedIn Username:</label><br>
+        <input type="text" id="username" name="username" required><br>
+        <label for="password">LinkedIn Password:</label><br>
+        <input type="password" id="password" name="password" required><br>
+        <label for="urls">LinkedIn Profile URLs (one per line):</label><br>
+        <textarea id="urls" name="urls" rows="10" cols="50"></textarea><br>
+        <label for="file">Upload File with URLs:</label><br>
+        <input type="file" id="file" name="file"><br>
+        <input type="submit" value="Run">
+    </form>
+</body>
+</html>
