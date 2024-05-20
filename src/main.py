@@ -1,4 +1,4 @@
-from flask import Flask, request, render_template, send_file
+from flask import Flask, request, render_template_string, send_file
 import os
 import pandas as pd
 from scraper import run_scraper
@@ -7,7 +7,8 @@ app = Flask(__name__)
 
 @app.route('/')
 def index():
-    return render_template('index.html')
+    with open('index.html') as f:
+        return render_template_string(f.read())
 
 @app.route('/scrape', methods=['POST'])
 def scrape():
