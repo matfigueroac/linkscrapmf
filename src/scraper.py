@@ -46,7 +46,7 @@ def get_profile_info(url, driver):
         job_title = company_name = school_name = about = 'not available'
 
         try:
-            job_title_element = driver.find_element(By.CSS_SELECTOR, "SECTION[data-view-name='profile-card']:nth-of-type(7) > DIV:last-of-type > UL:first-of-type > LI:first-of-type > DIV[data-view-name='profile-component-entity']:first-of-type > DIV:last-of-type > DIV:first-of-type > DIV:first-of-type > DIV:first-of-type > DIV:first-of-type > DIV:first-of-type > DIV:first-of-type > SPAN:first-of-type")
+            job_title_element = driver.find_element(By.CSS_SELECTOR, "SECTION[data-view-name='profile-card']:nth-of-type(7) > DIV:last-of-type > UL:first-of-type > LI:first-of-type > DIV[data-view-name='profile-component-entity']:first-of-type > DIV:last-of-type > DIV:first-of-type > DIV:first-of-type > DIV:first-of-type > DIV:first-of-type > DIV:first-of-type > SPAN:first-of-type")
             job_title = job_title_element.text.strip() if job_title_element else "not available"
         except Exception as e:
             print(f"Error fetching job title for {url}: {e}")
