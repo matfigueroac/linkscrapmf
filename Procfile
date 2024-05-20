@@ -1,1 +1,1 @@
-web: ./build.sh && python src/main.py
+web: gunicorn src.main:app

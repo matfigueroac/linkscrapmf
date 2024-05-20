@@ -1,5 +1,5 @@
-Flask
-Selenium
-pandas
-selenium-stealth
-gunicorn
+Flask==3.0.3
+selenium==4.21.0
+selenium-stealth==1.0.6
+pandas==2.2.2
+gunicorn==22.0.0
